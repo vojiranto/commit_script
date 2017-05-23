@@ -1,0 +1,4 @@
+#!/bin/bash
+VAR=`vers_updater.lua $2`
+git commit -a -m $VAR
+git push $1 master
