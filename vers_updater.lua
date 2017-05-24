@@ -1,5 +1,6 @@
 #!/usr/bin/lua5.2
 dofile ("./version.lua")
+dofile ("./file_write.lua")
 
 -- изменяем версию.
 if arg[1] == "Up" then 
@@ -10,11 +11,9 @@ else
     v3 = v3 + 1
 end
 
-file = io.open ("./version.lua", "w")
-file:write(
+file_write ("./version.lua", 
     "v1 = ".. v1 .."\n"..
     "v2 = ".. v2 .."\n"..
     "v3 = ".. v3 .."\n")
-io.close (file)
 
 io.write ("v."..v1.."."..v2.."."..v3)
